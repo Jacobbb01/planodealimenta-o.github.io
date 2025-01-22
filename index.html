@@ -1,128 +1,5 @@
 
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barra de Progresso e Timer</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #b6b4b4;
-        }
-
-        /* Barra de progresso */
-        .progress-container {
-            width: 90%;
-            max-width: 600px;
-            margin-bottom: 50px;
-        }
-
-        .progress-bar {
-            width: 100%;
-            background-color: #696a6b;
-            border-radius: 25px;
-            overflow: hidden;
-            position: relative;
-            height: 30px;
-        }
-
-        .progress-bar-fill {
-            width: 70%;
-            height: 100%;
-            background-color: #9d0000;
-            text-align: center;
-            line-height: 30px;
-            color: #313131;
-            font-weight: bold;
-            position: relative;
-        }
-
-        /* Timer circular */
-        .timer-container {
-            position: relative;
-            width: 150px;
-            height: 150px;
-        }
-
-        .timer-circle {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: conic-gradient(#9d0000 0%, #6b6b6bd3 0%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .timer-text {
-            position: absolute;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #000;
-        }
-
-        @keyframes countdown {
-            from {
-                background: conic-gradient(#9d0000 0%, #d8d9db 100%);
-            }
-            to {
-                background: conic-gradient(#d8d9db 100%, #d8d9db 100%);
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Barra de progresso -->
-    <div class="progress-container">
-        <div class="progress-bar">
-            <div class="progress-bar-fill">Parabéns por adquirir o Método Controle Total de Diabetes em 30 Dias</div>
-        </div>
-    </div>
-
-    <!-- Timer de contagem regressiva -->
-    <div class="timer-container">
-        <div class="timer-circle" id="timer-circle">
-            <span class="timer-text" id="timer-text">15:00</span>
-        </div>
-    </div>
-
-    <script>
-        // Configuração do Timer
-        const TOTAL_TIME = 15 * 60; // 15 minutos em segundos
-        let currentTime = TOTAL_TIME;
-
-        const timerText = document.getElementById('timer-text');
-        const timerCircle = document.getElementById('timer-circle');
-
-        function updateTimer() {
-            // Atualiza o texto do timer
-            const minutes = Math.floor(currentTime / 60);
-            const seconds = currentTime % 60;
-            timerText.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
-            // Atualiza a animação da barra circular
-            const percentage = (currentTime / TOTAL_TIME) * 100;
-            timerCircle.style.background = `conic-gradient(#9d0000 ${percentage}%, #d8d9db ${percentage}%)`;
-
-            if (currentTime > 0) {
-                currentTime--;
-            }
-        }
-
-        // Atualiza o timer a cada segundo
-        setInterval(updateTimer, 1000);
-    </script>
-</body>
-</html>
-
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
@@ -150,6 +27,130 @@
         background-blend-mode: darken;
       }
     </style>
+
+<html lang="pt-BR">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Barra de Progresso e Timer</title>
+      <style>
+          body {
+              font-family: Arial, sans-serif;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              height: 100vh;
+              margin: 0;
+              background-color: #f4f4f4;
+          }
+  
+          /* Barra de progresso */
+          .progress-container {
+              width: 90%;
+              max-width: 600px;
+              margin-bottom: 50px;
+          }
+  
+          .progress-bar {
+              width: 100%;
+              background-color: #d8d9db;
+              border-radius: 25px;
+              overflow: hidden;
+              position: relative;
+              height: 30px;
+              display: flex;
+              align-items: center;
+          }
+  
+          .progress-bar-fill {
+              width: 70%;
+              height: 100%;
+              background-color: #9d0000;
+              text-align: center;
+              line-height: 30px;
+              color: #fff;
+              font-weight: bold;
+          }
+  
+          /* Timer circular */
+          .timer-container {
+              position: relative;
+              width: 150px;
+              height: 150px;
+          }
+  
+          .timer-circle {
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+              background: conic-gradient(#9d0000 0%, #d8d9db 0%);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+          }
+  
+          .timer-text {
+              position: absolute;
+              font-size: 1.5rem;
+              font-weight: bold;
+              color: #000;
+          }
+  
+          @keyframes countdown {
+              from {
+                  background: conic-gradient(#9d0000 0%, #d8d9db 100%);
+              }
+              to {
+                  background: conic-gradient(#d8d9db 100%, #d8d9db 100%);
+              }
+          }
+      </style>
+  </head>
+  <body>
+  
+      <!-- Barra de progresso -->
+      <div class="progress-container">
+          <div class="progress-bar">
+              <div class="progress-bar-fill">Parabéns por adquirir o Método Controle Total de Diabetes em 30 Dias</div>
+          </div>
+      </div>
+  
+      <!-- Timer de contagem regressiva -->
+      <div class="timer-container">
+          <div class="timer-circle" id="timer-circle">
+              <span class="timer-text" id="timer-text">15:00</span>
+          </div>
+      </div>
+  
+      <script>
+          // Configuração do Timer
+          const TOTAL_TIME = 15 * 60; // 15 minutos em segundos
+          let currentTime = TOTAL_TIME;
+  
+          const timerText = document.getElementById('timer-text');
+          const timerCircle = document.getElementById('timer-circle');
+  
+          function updateTimer() {
+              // Atualiza o texto do timer
+              const minutes = Math.floor(currentTime / 60);
+              const seconds = currentTime % 60;
+              timerText.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  
+              // Atualiza a animação da barra circular
+              const percentage = (currentTime / TOTAL_TIME) * 100;
+              timerCircle.style.background = `conic-gradient(#9d0000 ${percentage}%, #d8d9db ${percentage}%)`;
+  
+              if (currentTime > 0) {
+                  currentTime--;
+              }
+          }
+  
+          // Atualiza o timer a cada segundo
+          setInterval(updateTimer, 1000);
+      </script>
+  </body>
+  </html>
 
   </head>
   <body>
@@ -219,6 +220,20 @@
     </h3>
 </body>
 </html>
+
+
+<!-- HOTMART - Sales Funnel Widget -->
+<!--- sales funnel container --->
+<div id="hotmart-sales-funnel"></div>
+
+<!--- script load and setup --->
+<script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+<script>
+checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+</script>
+<!-- HOTMART - Sales Funnel Widget -->
+
+
 
             <!-- Termos de Uso e Política de Privacidade -->
             <div class="text-white mt-4"><a href="termos.html" class="text-white">Termos de Uso</a> | <a href="privacidade.html" class="text-white">Política de Privacidade</a></div>
