@@ -1,26 +1,27 @@
 <header class="py-4">
   <div class="container">
+    
     <!-- Barra de Progressão -->
-    <div class="progress-container">
+    <div class="text-center">
       <p class="progress-text">Apenas 40% restantes para completar sua inscrição!</p>
-      <div class="progress">
-        <div class="progress-bar" style="width: 60%;">60%</div>
+      <div class="progress" style="height: 25px;">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" 
+             role="progressbar" style="width: 60%;">60%</div>
       </div>
     </div>
 
-    <!-- Timer Circular -->
-    <div class="timer-container">
-      <svg class="timer-circle" width="120" height="120">
-        <circle cx="60" cy="60" r="54"></circle>
-        <text id="timer-text" x="50%" y="55%" text-anchor="middle">15:00</text>
-      </svg>
+    <!-- Timer -->
+    <div class="text-center my-4">
+      <h5 class="text-white">Oferta expira em:</h5>
+      <div id="timer" class="timer-circle">15:00</div>
     </div>
 
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">
+        <!-- Título Principal -->
         <h3 class="my-4"><b> Descubra os Segredos e Mentiras que me fizeram chegar na presidência do Brasil </b></h3>
-        
-        <!-- VSL -->
+
+        <!-- VSL - Wistia Video -->
         <script src="https://fast.wistia.com/player.js" async></script>
         <script src="https://fast.wistia.com/embed/p1jfkxc32f.js" async type="module"></script>
         <style>wistia-player[media-id='p1jfkxc32f']:not(:defined) { 
